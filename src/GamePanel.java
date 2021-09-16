@@ -52,8 +52,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			g.setColor(Color.YELLOW);
 			g.drawString("Press SPACE for instructions", 50, 400);
 		}
-		void drawGameState(Graphics g) {  }
-		void drawEndState(Graphics g)  {  }
+		void drawGameState(Graphics g) {
+			g.setColor(Color.BLACK);
+			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		}
+		void drawEndState(Graphics g)  {
+			g.setColor(Color.RED);
+			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		}
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -64,7 +70,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			}else if(currentState == END){
 			    updateEndState();
 			}
-			repaint();
+			System.out.println("action");
+					repaint();
 		}
 		@Override
 		public void keyTyped(KeyEvent e) {
@@ -81,12 +88,24 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			        currentState++;
 			    }
 			}   
+			if (e.getKeyCode()==KeyEvent.VK_UP) {
+			    System.out.println("UP");
+			}
+			if (e.getKeyCode()==KeyEvent.VK_DOWN) {
+			    System.out.println("DOWN");
+			}
+			if (e.getKeyCode()==KeyEvent.VK_LEFT) {
+			    System.out.println("LEFT");
+			}
+			if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
+			    System.out.println("RIGHT");
+			}
 
 		}
 		@Override
 		public void keyReleased(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
+		
 		}
 
 	}
