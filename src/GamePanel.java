@@ -76,7 +76,7 @@ Rocketship rocket = new Rocketship(250,700,50,50);
 			}else if(currentState == END){
 			    updateEndState();
 			}
-			System.out.println("action");
+		
 					repaint();
 		}
 		@Override
